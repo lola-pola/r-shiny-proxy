@@ -13,6 +13,8 @@ env:
     CLUSTER_NAME: r-shiny-proxy-automation-demo
     CLUSTER_RESOURCE_GROUP: teva-private-demo
     CONTAINER_NAME: shinyproxy-application
+    CONTAINER_NAME_SIDE: kube-proxy-sidecar
+
 jobs:
     buildImage:
         permissions:
@@ -29,6 +31,8 @@ jobs:
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push image to ACR
               run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./shinyproxy-application/Dockerfile ./
+            - name: Build and push image to ACR
+              run: az acr build --image ${{ env.CONTAINER_NAME_SIDE }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./kube-proxy-sidecar/Dockerfile ./
     deploy:
         permissions:
             actions: read
