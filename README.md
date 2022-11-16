@@ -97,6 +97,7 @@ logging:
 
 <details>
   <summary>Click to see the - install on k8s </summary>
+  
 ### install on k8s 
 
 ```
@@ -117,10 +118,12 @@ kubectl get pods  -n r-shiny-proxy
 start to the url and start enjoy :) 
 </details>
 
+
 </details>
 
 <details>
   <summary>Click to see the - puting all togahter </summary>
+  
 ### puting all togahter L:)
 
 ```
