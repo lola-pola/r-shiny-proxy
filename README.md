@@ -2,7 +2,7 @@
 
 ## Demo 
 
-![Demo](https://github.com/lola-pola/r-shiny-proxy/blob/master/record/shinyproxy-demo.gif)
+![Demo](record/shinyproxy-demo.gif)
 
 
 ## build component
