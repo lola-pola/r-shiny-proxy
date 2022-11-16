@@ -1,24 +1,25 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: shinyproxy
+  name: {{ include "r-shiny-proxy.fullname" . }}
+spec:
+  type: LoadBalancer
+  selector:
+    run: {{ include "r-shiny-proxy.fullname" . }}
+  ports:
+  - protocol: TCP
+    port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.port }}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "r-shiny-proxy.fullname" . }}-np
 spec:
   type: NodePort
   selector:
-    run: shinyproxy
+    run: {{ include "r-shiny-proxy.fullname" . }}
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 8080
-    nodePort: 32094
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: shinyproxy-load-balancer
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 8080
-  selector:
-    run: shinyproxy
+    port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.containerPort }}

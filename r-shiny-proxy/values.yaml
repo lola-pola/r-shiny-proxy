@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: elhaysteva.azurecr.io/r-shiny-proxy
+  repository: tevaprivatedemo.azurecr.io/shinyproxy-application
+  repositorySidecar: tevaprivatedemo.azurecr.io/kube-proxy-sidecar
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: 1
@@ -39,6 +40,8 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
+  containerPort: 8080
+  sideContainerPort: 8001
 
 ingress:
   enabled: false

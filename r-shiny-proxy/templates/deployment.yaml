@@ -1,20 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shinyproxy
+  name: {{ include "r-shiny-proxy.fullname" . }}
 spec:
   selector:
     matchLabels:
-      run: shinyproxy
+      run: {{ include "r-shiny-proxy.fullname" . }}
   replicas: 1
   template:
     metadata:
       labels:
-        run: shinyproxy
+        run: {{ include "r-shiny-proxy.fullname" . }}
     spec:
       containers:
-      - name: shinyproxy
-        image: {{ .Values.image.repository }}:{{.Values.image.tag }}
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+      - name: {{ include "r-shiny-proxy.fullname" . }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: {{ .Values.service.containerPort }}
+      - name: {{ include "r-shiny-proxy.fullname" . }}-sidecar
+        image: "{{ .Values.image.repositorySidecar }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always 
+        ports:
+        - containerPort: {{ .Values.service.sideContainerPort }}
+
