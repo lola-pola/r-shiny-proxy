@@ -8,10 +8,10 @@
 
 
 ## build component
-"""
+"
 export registry_name='tevaprivatedemo.azurecr.io'
 echo ${registry_name}
-"""
+"
 
 """
 docker build -t ${registry_name}/kube-proxy-sidecar:1 kube-proxy-sidecar/
