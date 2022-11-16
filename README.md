@@ -1,6 +1,5 @@
 # R Shiny Proxy
-<details>
-  <diagram>Diagram Flow </diagram>
+<diagram>
 ```mermaid
 graph TD;
     users-->r-shiny-prox;
@@ -11,7 +10,7 @@ graph TD;
     app-b-->k8s-pod-b;
     app-c-->k8s-pod-c;
 ```
-</details>
+</diagram>
     
 ## Demo 
 
