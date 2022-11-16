@@ -5,16 +5,18 @@
 ![Demo](record/shinyproxy-demo.gif)
 
 
+
+
 ## build component
-'''
+"""
 export registry_name='tevaprivatedemo.azurecr.io'
 echo ${registry_name}
-'''
+"""
 
-'''
+"""
 docker build -t ${registry_name}/kube-proxy-sidecar:1 kube-proxy-sidecar/
 docker push ${registry_name}/kube-proxy-sidecar:1
-'''
+"""
 
 '''
 docker build -t ${registry_name}/shinyproxy-application:1 shinyproxy-application/
