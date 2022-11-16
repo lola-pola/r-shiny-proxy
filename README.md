@@ -1,7 +1,7 @@
 # R Shiny Proxy
 
 <details>
-  <summary>Click me</summary>
+  <summary>Click to see the - diagram</summary>
     
     
 ```mermaid
@@ -22,7 +22,9 @@ graph TD;
 
 
 
-
+<details>
+  <summary>Click to see the - build</summary>
+    
 ## build component
 
 
@@ -91,8 +93,10 @@ logging:
 
 
 ```
+</details>
 
-
+<details>
+  <summary>Click to see the - install on k8s </summary>
 ## install on k8s 
 
 ```
@@ -111,7 +115,12 @@ kubectl get pods  -n r-shiny-proxy
 
 
 start to the url and start enjoy :) 
+</details>
 
+</details>
+
+<details>
+  <summary>Click to see the - puting all togahter </summary>
 ## puting all togahter L:)
 
 ```
@@ -132,3 +141,4 @@ kubectl get ingress -n r-shiny-proxy
 kubectl get pods  -n r-shiny-proxy  -w 
 
 ```
+</details>
