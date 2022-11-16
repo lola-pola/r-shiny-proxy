@@ -1,4 +1,4 @@
-# r-shiny-proxy-
+# R Shiny Proxy
 
 ```mermaid
 graph TD;
@@ -19,6 +19,8 @@ graph TD;
 
 
 ## build component
+
+
 ```
 export registry_name='tevaprivatedemo.azurecr.io'
 echo ${registry_name}
