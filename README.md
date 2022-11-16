@@ -6,10 +6,10 @@
     
 ```mermaid
 graph TD;
-    users-->r-shiny-prox;
-    r-shiny-prox-->app-a;
-    r-shiny-prox-->app-b;
-    r-shiny-prox-->app-c;
+    users-->r-shiny-proxy;
+    r-shiny-proxy-->app-a;
+    r-shiny-proxy-->app-b;
+    r-shiny-proxy-->app-c;
     app-a-->k8s-pod-a;
     app-b-->k8s-pod-b;
     app-c-->k8s-pod-c;
