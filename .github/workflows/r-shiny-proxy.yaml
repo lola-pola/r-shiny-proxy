@@ -29,9 +29,9 @@ jobs:
                 client-id: ${{ secrets.AZURE_CLIENT_ID }}
                 subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-            - name: Build and push image to ACR
+            - name: Build and push image to ACR shinyproxy-application
               run: cd shinyproxy-application && az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./Dockerfile . 
-            - name: Build and push image to ACR
+            - name: Build and push image to ACR kube-proxy-sidecar
               run: cd kube-proxy-sidecar && az acr build --image ${{ env.CONTAINER_NAME_SIDE }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./Dockerfile .
     deploy:
         permissions:
