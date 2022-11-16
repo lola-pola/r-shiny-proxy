@@ -2,10 +2,10 @@
 
 ```mermaid
 graph TD;
-    user-->r-shiny-prox;
+    users-->r-shiny-prox;
     r-shiny-prox-->app-a;
-    r-shiny-prox-->app-a;
-    r-shiny-prox-->app-a;
+    r-shiny-prox-->app-b;
+    r-shiny-prox-->app-c;
     app-a-->k8s-pod-a;
     app-b-->k8s-pod-b;
     app-c-->k8s-pod-c;
