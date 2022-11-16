@@ -25,7 +25,7 @@ graph TD;
 <details>
   <summary>Click to see the - build</summary>
     
-## build component
+### build component
 
 
 ```
@@ -44,7 +44,7 @@ docker push ${registry_name}/shinyproxy-application:1
 ```
 
 
-## craete app proxy configuration 
+### craete app proxy configuration 
 you need to validate what need to change in this file 
 
 ```
@@ -97,7 +97,7 @@ logging:
 
 <details>
   <summary>Click to see the - install on k8s </summary>
-## install on k8s 
+### install on k8s 
 
 ```
 helm upgrade -i r-shiny-proxy --create-namespace -n r-shiny-proxy  r-shiny-proxy
@@ -121,7 +121,7 @@ start to the url and start enjoy :)
 
 <details>
   <summary>Click to see the - puting all togahter </summary>
-## puting all togahter L:)
+### puting all togahter L:)
 
 ```
 export registry_name='tevaprivatedemo.azurecr.io'
