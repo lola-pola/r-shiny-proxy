@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "r-shiny-proxy.fullname" . }}
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - {{ include "r-shiny-proxy.fullname" . }}.azure.com
+    secretName: ingress-tls-csi
+  rules:
+  - host: {{ include "r-shiny-proxy.fullname" . }}.azure.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix      
+        backend:
+          service:
+            name: {{ include "r-shiny-proxy.fullname" . }}-np
+            port:
+              number: {{ .Values.service.port }}
