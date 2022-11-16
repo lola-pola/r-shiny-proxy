@@ -1,4 +1,5 @@
 # R Shiny Proxy on AKS 
+https://github.com/lola-pola/r-shiny-proxy/actions/workflows/r-shiny-proxy.yaml/badge.svg
 
 <details>
   <summary>Click to see the - diagram</summary>
