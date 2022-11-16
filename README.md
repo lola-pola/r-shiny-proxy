@@ -1,4 +1,4 @@
-# R Shiny Proxy
+# R Shiny Proxy on AKS 
 
 <details>
   <summary>Click to see the - diagram</summary>
@@ -96,9 +96,9 @@ logging:
 </details>
 
 <details>
-  <summary>Click to see the - install on k8s </summary>
+  <summary>Click to see the - install on AKS  </summary>
   
-### install on k8s 
+### install on AKS  
 
 ```
 helm upgrade -i r-shiny-proxy --create-namespace -n r-shiny-proxy  r-shiny-proxy
