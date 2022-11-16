@@ -1,5 +1,16 @@
 # r-shiny-proxy-
 
+```mermaid
+graph TD;
+    user-->r-shiny-prox;
+    r-shiny-prox-->app-a;
+    r-shiny-prox-->app-a;
+    r-shiny-prox-->app-a;
+    app-a-->k8s-pod-a;
+    app-b-->k8s-pod-b;
+    app-c-->k8s-pod-c;
+```
+
 ## Demo 
 
 ![Demo](record/shinyproxy-demo.gif)
