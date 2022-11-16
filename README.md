@@ -1,5 +1,7 @@
 # R Shiny Proxy
-<diagram>
+
+<details>
+  <summary>Click me</summary>
     
     
 ```mermaid
@@ -12,7 +14,7 @@ graph TD;
     app-b-->k8s-pod-b;
     app-c-->k8s-pod-c;
 ```
-</diagram>
+</details>
     
 ## Demo 
 
